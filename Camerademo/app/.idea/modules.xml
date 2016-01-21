@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Camerademo 3.22.53 PM.iml" filepath="$PROJECT_DIR$/../Camerademo 3.22.53 PM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Camerademo.iml" filepath="$PROJECT_DIR$/../Camerademo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
     </modules>
   </component>
