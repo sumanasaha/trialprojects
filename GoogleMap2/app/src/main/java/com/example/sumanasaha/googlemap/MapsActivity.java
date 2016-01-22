@@ -4,15 +4,18 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.widget.EditText;
 
@@ -54,17 +57,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        /**mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng kerela = new LatLng(9.365296, 76.780886);
-        mMap.addMarker(new MarkerOptions().position(kerela).title("Marker in Kerela"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(kerela));
+        * Add a marker in Sydney and move the camera
+        *LatLng kerela = new LatLng(9.365296, 76.780886);
+        *mMap.addMarker(new MarkerOptions().position(kerela).title("Marker in Kerela"));
+        *mMap.moveCamera(CameraUpdateFactory.newLatLng(kerela));
+         * To go to real time google map with all its features
+         *
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:47.6,-122.3"));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }*/
+
+
     }
 
     public void onSearch(View view)
     {
-        EditText location_tf= (EditText) findViewById(R.id.TFaddress);
+        /**EditText location_tf= (EditText) findViewById(R.id.TFaddress);
         String location=location_tf.getText().toString();
         List<Address> addressList=null;
         if(location!=null || !location.equals(""))
@@ -104,8 +117,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             AlertDialog alert11 = builder1.create();
             alert11.show();
         }
-        }
+        }*/
 
+        /**Email Service
+        EditText location_tf= (EditText) findViewById(R.id.TFaddress);
+        String location=location_tf.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_SEND);*/
+        //intent.setType("*/*");
+       // intent.putExtra(Intent.EXTRA_EMAIL,location);
+        //intent.putExtra(Intent.EXTRA_SUBJECT, "Test Email");
+        //intent.putExtra(Intent.EXTRA_STREAM, attachment);
+       // if (intent.resolveActivity(getPackageManager()) != null) {
+       //     startActivity(intent);
+       // }
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.search)
+                        .setContentTitle("My notification")
+                        .setContentText("Hello World!");
     }
 }
 
