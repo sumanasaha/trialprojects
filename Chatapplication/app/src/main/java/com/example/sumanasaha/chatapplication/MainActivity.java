@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
         TextView newText=new TextView(this);
         newText.setText(msg);
 
-        params1.addRule(msgrcvd.,msgrcvd.getId());
+        params1.addRule(msgrcvd.getId());
         layout.addView(msgrcvd,params1);
         //Restting the EditText text
         msgrcvd.setText("Type Your Message here");
